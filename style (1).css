@@ -1,0 +1,126 @@
+/* ===============================
+   GLOBAL
+=============================== */
+body {
+  background-color: #121212;
+  color: #e0e0e0;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+header h1 {
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* ===============================
+   TABLE
+=============================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 12px;
+  background-color: #1e1e1e;
+}
+
+th, td {
+  border: 1px solid #555;
+  padding: 10px;
+  text-align: center;
+  color: #e0e0e0;
+}
+
+th {
+  background-color: #222;
+  font-weight: bold;
+}
+
+/* ===============================
+   FORM INPUT (GRID RESPONSIVE)
+=============================== */
+.form-inputs {
+  display: grid;
+  grid-template-columns:
+    3fr    /* Nama Pelanggan (PALING LEBAR) */
+    1.2fr  /* Tanggal */
+    1fr    /* Jenis */
+    0.7fr  /* Jumlah Galon (SEMPIT) */
+    1fr    /* Harga */
+    1fr    /* Infaq */
+    auto;  /* Tombol */
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.form-inputs input,
+.form-inputs select,
+.form-inputs button {
+  padding: 8px;
+  border: 1px solid #555;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* ===============================
+   BUTTON DEFAULT
+=============================== */
+.form-inputs button {
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+
+/* ===============================
+   BUTTON COLORS
+=============================== */
+.form-inputs .btn-danger {
+  background-color: #c62828; /* merah */
+}
+
+.form-inputs .btn-primary {
+  background-color: #1565c0; /* biru */
+}
+
+.form-inputs .btn-success {
+  background-color: #2e7d32; /* hijau */
+}
+
+/* ===============================
+   BUTTON HOVER
+=============================== */
+.form-inputs button:hover {
+  opacity: 0.9;
+}
+
+.form-inputs .btn-danger:hover {
+  background-color: #e53935;
+}
+
+.form-inputs .btn-primary:hover {
+  background-color: #1e88e5;
+}
+
+.form-inputs .btn-success:hover {
+  background-color: #43a047;
+}
+
+/* ===============================
+   INFO SECTION
+=============================== */
+.info-section p {
+  font-weight: bold;
+  color: #ffffff;
+  margin: 6px 0;
+}
+
+/* ===============================
+   MOBILE RESPONSIVE
+=============================== */
+@media (max-width: 768px) {
+  .form-inputs {
+    grid-template-columns: 1fr;
+  }
+}

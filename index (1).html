@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Makmur Sentosa "MINUMO"</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#4CAF50" />
+  <link rel="icon" href="assets/192.png" type="image/png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- ========================= -->
+  <!-- HEADER -->
+  <!-- ========================= -->
+  <header>
+    <h1>MAKMUR SENTOSA "Agen Air Mineral Minumo"</h1>
+  </header>
+
+  <!-- ========================= -->
+  <!-- TABEL DATA -->
+  <!-- ========================= -->
+  <section class="form-section">
+    <table id="dataTable">
+      <thead>
+        <tr>
+          <th>Nama Pelanggan</th>
+          <th>Tanggal</th>
+          <th>Jenis</th>
+          <th>Jumlah Galon</th>
+          <th>Harga / Galon</th>
+          <th>Total Infaq</th>
+          <th>Hapus</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <!-- ========================= -->
+    <!-- FORM INPUT -->
+    <!-- ========================= -->
+    <div class="form-inputs">
+      <input type="text" id="namaPelanggan" placeholder="Nama Pelanggan" />
+      <input type="date" id="tanggal" />
+
+      <select id="jenis">
+        <option value="Pemasukan">Pemasukan</option>
+        <option value="Pengeluaran">Pengeluaran</option>
+      </select>
+
+      <input type="number" id="jumlah" placeholder="Jumlah Galon" />
+      <input type="number" id="harga" placeholder="Harga per Galon" />
+
+      <!-- INFAQ FLEKSIBEL -->
+     <input type="number" id="infaq" placeholder="Nominal Infaq (opsional)" />
+
+      <!-- TOMBOL -->
+      <button onclick="tambahData()">Tambah Data</button>
+      <button class="btn-danger" onclick="hapusSemua()">Hapus Semua</button>
+      <button class="btn-primary" onclick="exportPDF()">Export PDF</button>
+      <button class="btn-success" onclick="exportExcel()">Export Excel</button>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- INFO UTAMA -->
+  <!-- ========================= -->
+  <section class="info-section">
+    <p>Total Penjualan: <span id="totalPenjualan">0</span></p>
+    <p>Total Pengeluaran: <span id="totalPengeluaran">0</span></p>
+    <p>Saldo Akhir: <span id="saldoAkhir">0</span></p>
+    <p>Total Infaq: <span id="totalInfaq">0</span></p>
+  </section>
+
+  <!-- ========================= -->
+  <!-- INFO OPERASIONAL -->
+  <!-- ========================= -->
+  <section class="info-section">
+    <p><strong>Info Operasional Galon</strong></p>
+    <p>Total Galon Terjual: <span id="totalGalon">0</span></p>
+    <p>Total Modal Galon (4.500): <span id="totalModal">0</span></p>
+    <p>Biaya Operasional Galon (500): <span id="totalBiayaOperasional">0</span></p>
+    <p><strong>Profit Operasional: <span id="profitOperasional">0</span></strong></p>
+  </section>
+
+  <!-- ========================= -->
+  <!-- LIBRARY -->
+  <!-- ========================= -->
+  <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.5.29/dist/jspdf.plugin.autotable.min.js"></script>
+
+  <!-- SCRIPT APP -->
+  <script src="script.js"></script>
+
+  <!-- SERVICE WORKER -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("sw.js")
+        .then(() => console.log("Service Worker Registered"))
+        .catch(err => console.log("SW Error:", err));
+    }
+  </script>
+
+</body>
+</html>
+
+
