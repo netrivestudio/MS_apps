@@ -1,8 +1,8 @@
 // =====================================
 // KONSTANTA BISNIS
 // =====================================
-const MODAL_PER_GALON = 0;
-const BIAYA_OPERASIONAL_PER_GALON = 0;
+const MODAL_PER_GALON  
+const BIAYA_OPERASIONAL_PER_GALON  
 
 // =====================================
 // LOAD DATA DARI LOCAL STORAGE
